@@ -1,0 +1,3 @@
+temas y problemas que revisar con martin :D 
+https://codeforces.com/gym/101908/problem/B : grundy 
+https://codeforces.com/gym/101908/problem/L : lca 

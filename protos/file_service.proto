@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package fileshare;
+
+// El servicio gRPC para la búsqueda, transferencia y descubrimiento de archivos entre peers
+service FileService {
+  // Solicita la búsqueda de un archivo en la red
+  rpc SearchFile(SearchRequest) returns (SearchResponse) {}
+  // Solicita la descarga de un archivo específico
+  rpc DownloadFile(DownloadRequest) returns (DownloadResponse) {}
+  // Solicita información de peers para el descubrimiento de nuevos peers
+  rpc DiscoverPeers(DiscoverRequest) returns (DiscoverResponse) {}
+}
+
+// Mensaje de solicitud para buscar un archivo
+message SearchRequest {
+  string filename = 1;
+}
+
+// Mensaje de respuesta para la búsqueda de un archivo
+message SearchResponse {
+  bool found = 1;
+  string peerAddress = 2; // La dirección del peer que tiene el archivo
+}
+
+// Mensaje de solicitud para descargar un archivo
+message DownloadRequest {
+  string filename = 1;
+}
+
+// Mensaje de respuesta para la descarga de un archivo
+message DownloadResponse {
+  bytes content = 1; // El contenido del archivo
+}
+
+// Mensaje de solicitud para descubrir nuevos peers
+message DiscoverRequest {
+  // Puede incluir información específica del peer si es necesario
+}
+
+// Mensaje de respuesta para el descubrimiento de nuevos peers
+message DiscoverResponse {
+  repeated string peers = 1; // Lista de direcciones de peers conocidos
+}
