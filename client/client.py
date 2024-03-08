@@ -99,7 +99,8 @@ def main():
         elif command == 'peer_download':
             peer_address = input("Ingrese la dirección del peer (host:port): ")
             filename = input("Ingrese el nombre del archivo a descargar: ")
-            content = grpc_download_file(peer_address, filename)
+            port = input("Ingrese el puerto del peer (default '50051'): ") or '50051'
+            content = grpc_download_file(peer_address,port, filename)
             if content:
                 with open(filename, 'wb') as f:
                     f.write(content)

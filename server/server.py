@@ -16,7 +16,7 @@ import requests
 app = Flask(__name__)
 
 # Cargar la configuración desde un archivo JSON externo
-with open('config/config.json', 'r') as config_file:
+with open('/home/ubuntu/st0263-npellegrib/config/config.json', 'r') as config_file:
     config = json.load(config_file)
 
 # Función para obtener detalles de los archivos en el directorio especificado
