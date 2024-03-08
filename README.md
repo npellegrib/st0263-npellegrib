@@ -1,4 +1,4 @@
-#  STxxxx Nombre de la Materia: st0263-2024-1 Tópicos especiales en telemática 
+# st0263-2024-1 Tópicos especiales en telemática 
 #
 # Estudiante(s): Neller Pellegrino, npellegrib@eafit.edu.co
 #
